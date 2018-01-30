@@ -2,23 +2,19 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { routerMiddleware, routerReducer as routing, push } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
-import user from './reducers/user';
-import account from './reducers/account';
-import userActions from './actions/user';
-import accountActions from './actions/account';
+import allActions from './actions';
+import allReducers from './reducers';
 
 export default function configureStore(initialState, routerHistory) {
   const router = routerMiddleware(routerHistory);
 
   const actionCreators = {
-    ...userActions,
-    ...accountActions,
+    ...allActions,
     push
   };
 
   const reducers = {
-    user,
-    account,
+    ...allReducers,
     routing
   };
 
