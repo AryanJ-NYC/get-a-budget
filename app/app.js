@@ -6,6 +6,9 @@ import { createMemoryHistory } from 'history';
 import routes from './routes';
 import configureStore from './store';
 
+const models = require('./models/');
+models.sequelize.sync();
+
 const syncHistoryWithStore = (store, history) => {
   const { routing } = store.getState();
   if(routing && routing.location) {
