@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     lastReconciledDate: {
       type: DataTypes.DATE
     }
-  })
+  });
+
   return Account;
 };
