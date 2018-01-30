@@ -4,6 +4,7 @@
     "password": "ctp_user",
     "database": "ctpblog_development",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "sqlite",
+    "storage": "./database.sqlite"
   }
 }
