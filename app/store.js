@@ -1,21 +1,20 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { routerMiddleware, routerReducer as routing, push } from 'react-router-redux';
-import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
 
-import user from './reducers/user';
-import userActions from './actions/user';
+import allActions from './actions';
+import allReducers from './reducers';
 
 export default function configureStore(initialState, routerHistory) {
   const router = routerMiddleware(routerHistory);
 
   const actionCreators = {
-    ...userActions,
+    ...allActions,
     push
   };
 
   const reducers = {
-    user,
+    ...allReducers,
     routing
   };
 
@@ -29,7 +28,7 @@ export default function configureStore(initialState, routerHistory) {
     return compose;
   })();
 
-  const enhancer = composeEnhancers(applyMiddleware(...middlewares), persistState());
+  const enhancer = composeEnhancers(applyMiddleware(...middlewares));
   const rootReducer = combineReducers(reducers);
 
   return createStore(rootReducer, initialState, enhancer);
