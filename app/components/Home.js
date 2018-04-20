@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AccountCreation from './AccountCreation';
+import AccountCreation from '../containers/AccountCreation';
 
 export default class Home extends Component {
   state = {
