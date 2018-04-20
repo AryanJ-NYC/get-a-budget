@@ -1,7 +1,7 @@
-import userActions from './user';
 import accountActions from './account';
+import userActions from './user';
 
 export default {
-  ...userActions,
   ...accountActions,
+  ...userActions,
 };
