@@ -1,4 +1,4 @@
-import accountActions from './account';
+import * as accountActions from './account';
 import userActions from './user';
 
 export default {
