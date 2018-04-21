@@ -32,8 +32,9 @@ export default function AccountCreation({ addAccount, closeModal, isOpen }) {
     if (!currentBalance) {
       return 'Current balance is required.';
     }
-    else if (isNaN(currentBalance)) {
-      return 'Balance must be a number.';
+    const currencyRegex  = /^[1-9]\d*(?:\.\d{0,2})?$/;
+    if (!currencyRegex.test(currentBalance)) {
+      return 'Current balance must be a valid money type.';
     }
   };
   const validateOnBudget = onBudget => onBudget === undefined ? 'Budget type is required' : null;
