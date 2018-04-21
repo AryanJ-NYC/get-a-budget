@@ -1,8 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('account', {
+  const Account = sequelize.define('account', {
     name: {
       allowNull: false,
       type: DataTypes.STRING
+    },
+    currentBalance: {
+      allowNull: false,
+      defaultValue: 0,
+      type: DataTypes.DECIMAL,
     },
     onBudget: {
       allowNull: false,
@@ -19,4 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE
     }
   });
+
+  Account.associate = models => {
+    models.Account.hasMany(models.Transaction);
+  };
+
+  return Account;
 };
