@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import actions from '../actions';
 import Home from '../components/Home';
+import actions from '../redux/actions';
 
 const mapDispatchToProps = {
   fetchAccounts: actions.fetchAccounts,

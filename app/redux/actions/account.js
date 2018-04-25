@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { Account } from '../models';
+import { Account } from '../../models';
 
 export const addAccount = createAction('ADD_ACCOUNT');
 
