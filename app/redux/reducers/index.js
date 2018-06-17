@@ -1,7 +1,9 @@
-import user from './user';
 import account from './account';
+import transaction from './transaction';
+import user from './user';
 
 export default {
-  user,
   account,
+  transaction,
+  user,
 };

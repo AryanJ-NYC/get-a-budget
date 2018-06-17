@@ -6,13 +6,7 @@ const defaultState = {
 };
 
 export default handleActions({
-  [actions.addAccount]: (state, action) => {
-    return {
-      ...state,
-      all: [...state.all, action.payload]
-    };
-  },
-  [actions.receiveAccounts]: (state, action) => {
+  [actions.receiveTransactions]: (state, action) => {
     return {
       ...state,
       all: action.payload,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AccountCreation from '../containers/AccountCreation';
+import MainContent from '../containers/MainContent';
 import Sidebar from '../containers/Sidebar';
 
 export default class Home extends Component {
@@ -21,6 +22,7 @@ export default class Home extends Component {
         <AccountCreation closeModal={this.toggleModal} isOpen={this.state.isAccountCreationOpen} />
         <div style={wrapperStyle}>
           <Sidebar />
+          <MainContent />
         </div>
         <button onClick={this.toggleModal}>Add Account</button>
       </div>
